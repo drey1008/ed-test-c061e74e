@@ -19,16 +19,18 @@
 :root{--bg:#f4f1ec;--ink:#141414;--g:#5f5b55;--gl:#8a857c;--line:#d9d3c9;--soft:#e9e5de;--dark:#141414;--on-dark:#cfc9bf;
  --f:"Geist",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;--pad:clamp(20px,3.2vw,44px)}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--f);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--f);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100%}
 a{color:inherit}
 img{display:block;max-width:100%;height:auto}
 ::selection{background:var(--ink);color:#fff}
 :focus-visible{outline:2px solid currentColor;outline-offset:4px}
-.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:8px 14px;z-index:99}
-.skip:focus{left:8px}
+.skip{position:absolute;left:8px;top:8px;transform:translateY(-200%);background:var(--ink);color:#fff;padding:8px 14px;z-index:99}
+.skip:focus{transform:none}
 .w{padding-left:var(--pad);padding-right:var(--pad)}
 .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.grid>*{min-width:0}
+h1,h2,h3{overflow-wrap:break-word}
 
 /* header */
 header{position:sticky;top:0;z-index:20;background:rgba(244,241,236,.94);backdrop-filter:blur(8px)}
@@ -51,8 +53,8 @@ header{position:sticky;top:0;z-index:20;background:rgba(244,241,236,.94);backdro
 .hero h1{grid-column:1/-1;font-weight:400;font-size:clamp(38px,5.9vw,88px);line-height:1.02;letter-spacing:-.045em;max-width:22ch}
 .hero h1 span{color:var(--gl)}
 .hero-foot{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;margin-top:clamp(48px,8vh,88px);align-items:end}
-.hero-foot p{grid-column:7/11;font-size:19px;line-height:1.45;color:#3a3733}
-.hero-cta{grid-column:7/13;display:flex;align-items:center;gap:28px;margin-top:28px;flex-wrap:wrap}
+.hero-foot p{grid-column:7/13;justify-self:end;text-align:right;font-size:19px;line-height:1.45;color:#3a3733}
+.hero-cta{grid-column:7/13;display:flex;justify-content:flex-end;align-items:center;gap:28px;margin-top:28px;flex-wrap:wrap}
 .small{font-size:14px;color:var(--g)}
 
 /* sections */
@@ -73,8 +75,7 @@ h2{font-weight:400;font-size:clamp(30px,3.7vw,54px);line-height:1.06;letter-spac
 .demo .cat{font-size:14px;color:var(--g)}
 .demo p{color:var(--g);margin-top:4px}
 .demo .tl{display:inline-block;margin-top:12px;font-size:15px}
-.ex-note{margin-top:28px;max-width:70ch;color:var(--g)}
-.ex-note a{color:var(--ink)}
+
 
 /* proces */
 .steps{list-style:none;margin-top:56px;border-bottom:1px solid var(--line)}
@@ -127,7 +128,7 @@ input:focus,select:focus,textarea:focus{border-bottom-color:#fff}
 input::placeholder,textarea::placeholder{color:#8f897f}
 .send{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .send .small{color:var(--on-dark)}
-.hp{position:absolute;left:-9999px}
+.hp{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .form-status{font-size:14px;color:var(--on-dark)}
 .form-status.err{color:#f0b4a0}
 .form-done h3{font-weight:400;font-size:28px;letter-spacing:-.02em}
@@ -144,7 +145,7 @@ input::placeholder,textarea::placeholder{color:#8f897f}
  .hero-foot{margin-top:32px}
  .meta{flex-direction:column;gap:4px;margin-bottom:24px}
  .hero h1{font-size:clamp(36px,10.4vw,56px);line-height:1.04}
- .hero-foot p,.hero-cta{grid-column:1/-1}
+ .hero-foot p,.hero-cta{grid-column:1/-1;justify-self:start;text-align:left;justify-content:flex-start}
  .hero-cta{gap:20px}
  .label,.body{grid-column:1/-1}
  .label{margin-bottom:28px}
@@ -173,12 +174,12 @@ input::placeholder,textarea::placeholder{color:#8f897f}
 .arr{width:44px;height:44px;border-radius:50%;border:1px solid var(--ink);background:transparent;color:var(--ink);font:400 18px/1 var(--f);cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s,opacity .2s}
 .arr:hover:not(:disabled){background:var(--ink);color:#fff}
 .arr:disabled{opacity:.3;cursor:default}
-.rail-wrap{grid-column:1/-1;margin-top:48px;margin-right:calc(-1*var(--pad))}
+.rail-wrap{grid-column:1/-1;margin-top:48px;margin-right:calc(-1*var(--pad));min-width:0;max-width:calc(100% + var(--pad));overflow:hidden}
 .rail:focus:not(:focus-visible){outline:none}
 .rail{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scroll-padding-left:0;padding-right:var(--pad);padding-bottom:18px;list-style:none;scrollbar-width:thin;scrollbar-color:var(--gl) transparent;overscroll-behavior-x:contain}
 .rail::-webkit-scrollbar{height:4px}.rail::-webkit-scrollbar-thumb{background:var(--gl)}
 .rail>li{flex:0 0 calc((100% - 2*24px - var(--pad)) / 2.5);scroll-snap-align:start;min-width:0}
-.ex-note{grid-column:1/-1;margin-top:28px;font-size:15px}
+
 @media (max-width:860px){.rail>li{flex-basis:78%}.rail{gap:16px}.arr{width:40px;height:40px}.ex-top h2{max-width:none}}
 </style>
 </head>
@@ -235,7 +236,6 @@ input::placeholder,textarea::placeholder{color:#8f897f}
     </li>
    </ul>
   </div>
-  <p class="ex-note">Fiktive virksomheder, ægte design. Læs om <a href="../hjemmeside-til-frisoer/">hjemmeside til frisør</a> og <a href="../hjemmeside-til-virksomhed/">hjemmeside til din virksomhed</a>.</p>
  </section>
 
  <section id="proces" class="sec w grid" aria-labelledby="proces-title">
