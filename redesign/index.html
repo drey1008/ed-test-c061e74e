@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redesign forslag | ED. Web Works</title>
+<meta name="description" content="Skræddersyede hjemmesider til virksomheder i hele Danmark. Fast pris fra 4.500 kr. ekskl. moms, gratis demo før du betaler og hurtig levering.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="https://drey1008.github.io/ed-test-c061e74e/favicon-32.png">
+<link rel="apple-touch-icon" href="https://drey1008.github.io/ed-test-c061e74e/apple-touch-icon.png">
+<meta property="og:title" content="ED. Web Works | Hjemmesider bygget til din virksomhed">
+<meta property="og:image" content="https://drey1008.github.io/ed-test-c061e74e/og.png?v=2">
+<meta name="theme-color" content="#f4f1ec">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1ec;--ink:#141414;--g:#5f5b55;--gl:#8a857c;--line:#d9d3c9;--soft:#e9e5de;--dark:#141414;--on-dark:#cfc9bf;
+ --f:"Geist",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;--pad:clamp(20px,3.2vw,44px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+::selection{background:var(--ink);color:#fff}
+:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:8px 14px;z-index:99}
+.skip:focus{left:8px}
+.w{padding-left:var(--pad);padding-right:var(--pad)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(244,241,236,.94);backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.logo{font-size:18px;font-weight:500;letter-spacing:-.02em;text-decoration:none}
+.links{display:flex;gap:28px;list-style:none;font-size:15px}
+.links a{text-decoration:none;color:var(--g)}
+.links a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;text-decoration:none;font:400 15px/1 var(--f);padding:13px 20px;border-radius:99px;border:0;cursor:pointer;transition:background .2s}
+.btn:hover{background:#000}
+.btn.sm{font-size:14px;padding:10px 16px}
+.btn.inv{background:#fff;color:var(--ink)}
+.btn.inv:hover{background:var(--soft)}
+.tl{color:var(--ink);text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.tl:hover{text-decoration-thickness:2px}
+
+/* hero */
+.hero{padding-top:clamp(72px,14vh,160px);padding-bottom:clamp(64px,10vh,120px)}
+.meta{grid-column:1/-1;display:flex;justify-content:space-between;gap:24px;font-size:14px;color:var(--g);margin-bottom:36px}
+.hero h1{grid-column:1/-1;font-weight:400;font-size:clamp(38px,5.9vw,88px);line-height:1.02;letter-spacing:-.045em;max-width:22ch}
+.hero h1 span{color:var(--gl)}
+.hero-foot{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;margin-top:clamp(48px,8vh,88px);align-items:end}
+.hero-foot p{grid-column:7/11;font-size:19px;line-height:1.45;color:#3a3733}
+.hero-cta{grid-column:7/13;display:flex;align-items:center;gap:28px;margin-top:28px;flex-wrap:wrap}
+.small{font-size:14px;color:var(--g)}
+
+/* sections */
+.sec{border-top:1px solid var(--line);padding-top:28px;padding-bottom:clamp(80px,12vh,140px)}
+.label{grid-column:1/4;font-size:14px;color:var(--g);display:flex;gap:14px}
+.label b{font-weight:400;color:var(--ink)}
+.body{grid-column:4/13}
+h2{font-weight:400;font-size:clamp(30px,3.7vw,54px);line-height:1.06;letter-spacing:-.035em;max-width:20ch}
+.intro{max-width:46ch;color:var(--g);margin-top:22px}
+
+/* eksempler */
+.demos{display:grid;grid-template-columns:1fr 1fr;gap:56px 24px;margin-top:64px}
+.demo .shot{display:block;background:#e3ded5;aspect-ratio:16/10;overflow:hidden}
+.demo .shot img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.demo .shot:hover img{transform:scale(1.025)}
+.demo .cap{display:flex;justify-content:space-between;gap:16px;margin-top:16px;align-items:baseline}
+.demo h3{font-weight:400;font-size:22px;letter-spacing:-.02em}
+.demo .cat{font-size:14px;color:var(--g)}
+.demo p{color:var(--g);margin-top:4px}
+.demo .tl{display:inline-block;margin-top:12px;font-size:15px}
+.ex-note{margin-top:56px;max-width:60ch;color:var(--g)}
+.ex-note a{color:var(--ink)}
+
+/* proces */
+.steps{list-style:none;margin-top:56px;border-bottom:1px solid var(--line)}
+.steps li{display:grid;grid-template-columns:80px minmax(0,1fr) minmax(0,1.3fr);gap:24px;align-items:baseline;border-top:1px solid var(--line);padding:26px 0}
+.steps .n{font-size:14px;color:var(--g)}
+.steps h3{font-weight:400;font-size:clamp(28px,3vw,44px);letter-spacing:-.03em;line-height:1}
+.steps p{color:var(--g)}
+
+/* priser */
+.plans{margin-top:56px;border-bottom:1px solid var(--line)}
+.plan{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr) 230px;gap:24px 32px;border-top:1px solid var(--line);padding:36px 0}
+.plan h3{font-weight:400;font-size:clamp(30px,3.2vw,46px);letter-spacing:-.035em;line-height:1}
+.plan .for{font-size:14px;color:var(--g);margin-top:10px}
+.plan .rec{display:inline-block;font-size:13px;line-height:1;padding:6px 10px;border:1px solid var(--ink);border-radius:99px;margin-top:14px}
+.plan .price{font-size:22px;letter-spacing:-.02em}
+.plan .price small{font-size:14px;color:var(--g);letter-spacing:0}
+.plan .desc{color:var(--g);margin-top:6px;max-width:40ch}
+.plan ul{list-style:none;margin-top:18px;columns:2;column-gap:24px;font-size:15px}
+.plan li{padding:5px 0;break-inside:avoid}
+.plan li::before{content:"+ ";color:var(--gl)}
+.plan li.inc::before{content:"↳ "}
+.plan .act{align-self:start;justify-self:end;white-space:nowrap;font-size:15px}
+.pk-note{margin-top:28px;font-size:15px;color:var(--g)}
+
+/* om */
+.about{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));column-gap:24px;align-items:start}
+.about figure{grid-column:1/4}
+.about figure img{width:100%;aspect-ratio:382/434;object-fit:cover;filter:grayscale(.15)}
+.about .txt{grid-column:5/10}
+.about .txt p{margin-top:22px;max-width:52ch;color:#3a3733}
+.facts{margin-top:36px;border-bottom:1px solid var(--line)}
+.facts div{display:grid;grid-template-columns:150px 1fr;gap:16px;border-top:1px solid var(--line);padding:14px 0;font-size:15px}
+.facts dt{color:var(--g)}
+
+/* kontakt */
+.contact{background:var(--dark);color:#fff;padding-top:clamp(80px,12vh,140px);padding-bottom:40px}
+.contact h2{grid-column:1/8;font-size:clamp(38px,5.6vw,84px);line-height:1.02;letter-spacing:-.045em;max-width:14ch}
+.contact .side{grid-column:1/6;margin-top:32px;color:var(--on-dark);max-width:40ch}
+.contact .side ul{list-style:none;margin-top:18px;font-size:15px}
+.contact .side li{padding:4px 0}
+.contact .side li::before{content:"+ ";color:#8f897f}
+.contact .side a{color:#fff}
+form{grid-column:8/13;grid-row:1/3;display:grid;gap:26px;align-self:start}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+label{display:block;font-size:13px;color:var(--on-dark);margin-bottom:6px}
+input,select,textarea{width:100%;font:inherit;font-size:16px;color:#fff;background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.35);padding:10px 0;border-radius:0;outline:none}
+select option{color:#141414}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-bottom-color:#fff}
+input::placeholder,textarea::placeholder{color:#8f897f}
+.send{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.send .small{color:var(--on-dark)}
+.hp{position:absolute;left:-9999px}
+.form-status{font-size:14px;color:var(--on-dark)}
+.form-status.err{color:#f0b4a0}
+.form-done h3{font-weight:400;font-size:28px;letter-spacing:-.02em}
+.form-done p{color:var(--on-dark);margin-top:10px}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.16);margin-top:clamp(80px,12vh,140px);padding-top:22px;font-size:14px;color:var(--on-dark)}
+.foot a{color:#fff}
+.foot nav{display:flex;gap:24px}
+
+@media (max-width:860px){
+ body{font-size:16px}
+ .links{display:none}
+ .hero{padding-top:44px}
+ .meta{flex-direction:column;gap:4px;margin-bottom:24px}
+ .hero h1{font-size:clamp(36px,10.4vw,56px);line-height:1.04}
+ .hero-foot p,.hero-cta{grid-column:1/-1}
+ .hero-cta{gap:20px}
+ .label,.body{grid-column:1/-1}
+ .label{margin-bottom:28px}
+ .demos{grid-template-columns:1fr;gap:44px}
+ .steps li{grid-template-columns:44px 1fr;gap:8px 16px}
+ .steps p{grid-column:2}
+ .plan{grid-template-columns:1fr;gap:16px}
+ .plan ul{columns:1}
+ .plan .act{justify-self:start}
+ .about{grid-template-columns:1fr}
+ .about figure{grid-column:1;max-width:320px}
+ .about .txt{grid-column:1;margin-top:32px}
+ .facts div{grid-template-columns:120px 1fr}
+ .contact h2,.contact .side,form{grid-column:1/-1}
+ form{grid-row:auto;margin-top:48px}
+ .row2{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Gå til indhold</a>
+<header class="w">
+ <div class="nav">
+  <a class="logo" href="#" aria-label="ED. Web Works, til toppen">ED. Web Works</a>
+  <nav aria-label="Hovedmenu"><ul class="links"><li><a href="#eksempler">Eksempler</a></li><li><a href="#proces">Sådan foregår det</a></li><li><a href="#priser">Priser</a></li><li><a href="#om">Om mig</a></li></ul></nav>
+  <a class="btn sm" href="#kontakt">Book en snak</a>
+ </div>
+</header>
+
+<main id="main">
+ <section class="hero w grid" aria-labelledby="hero-title">
+  <p class="meta"><span>Hjemmesider til virksomheder i hele Danmark</span><span>Fast pris fra 4.500 kr. ekskl. moms</span></p>
+  <h1 id="hero-title">Jeg bygger hjemmesider til virksomheder, <span>der hellere vil bruge tiden på deres kunder end på deres hjemmeside.</span></h1>
+  <div class="hero-foot">
+   <p>Hver side bliver lavet til den virksomhed, den skal bruges af. Du taler direkte med mig fra første snak, til siden er online, og det tager typisk få dage.</p>
+   <div class="hero-cta">
+    <a class="btn" href="#kontakt">Book en gratis snak</a>
+    <a class="tl" href="#eksempler">Se eksempler</a>
+   </div>
+  </div>
+ </section>
+
+ <section id="eksempler" class="sec w grid" aria-labelledby="eksempler-title">
+  <p class="label"><span>01</span><b>Eksempler</b></p>
+  <div class="body">
+   <h2 id="eksempler-title">Fire sider, jeg har lavet til tænkte virksomheder, så du kan se, hvordan det kan se ud.</h2>
+   <div class="demos">
+    <article class="demo">
+     <a class="shot" href="../demoer/frisor/" tabindex="-1" aria-hidden="true"><img src="../demoer/thumbs/frisor.webp?v=3" alt="" width="800" height="500" loading="lazy" decoding="async"></a>
+     <div class="cap"><h3>Saks &amp; Sølv</h3><span class="cat">Frisørsalon</span></div>
+     <p>Booking direkte fra forsiden.</p>
+     <a class="tl" href="../demoer/frisor/" aria-label="Se demoen til frisørsalonen Saks og Sølv">Se demo →</a>
+    </article>
+    <article class="demo">
+     <a class="shot" href="../demoer/cafe/" tabindex="-1" aria-hidden="true"><img src="../demoer/thumbs/cafe.webp?v=3" alt="" width="800" height="500" loading="lazy" decoding="async"></a>
+     <div class="cap"><h3>Café Kornblomst</h3><span class="cat">Café &amp; brunch</span></div>
+     <p>Menukort og bordbooking.</p>
+     <a class="tl" href="../demoer/cafe/" aria-label="Se demoen til Café Kornblomst">Se demo →</a>
+    </article>
+    <article class="demo">
+     <a class="shot" href="../demoer/tomrer/" tabindex="-1" aria-hidden="true"><img src="../demoer/thumbs/tomrer.webp?v=3" alt="" width="800" height="500" loading="lazy" decoding="async"></a>
+     <div class="cap"><h3>Kvist &amp; Søn</h3><span class="cat">Tømrer &amp; håndværk</span></div>
+     <p>Fast pris og nem tilbudsformular.</p>
+     <a class="tl" href="../demoer/tomrer/" aria-label="Se demoen til tømrerfirmaet Kvist og Søn">Se demo →</a>
+    </article>
+    <article class="demo">
+     <a class="shot" href="../demoer/fysio/" tabindex="-1" aria-hidden="true"><img src="../demoer/thumbs/fysio.webp?v=3" alt="" width="800" height="500" loading="lazy" decoding="async"></a>
+     <div class="cap"><h3>Klinik Kerne</h3><span class="cat">Fysioterapi &amp; klinik</span></div>
+     <p>Behandlinger, priser og nem booking.</p>
+     <a class="tl" href="../demoer/fysio/" aria-label="Se demoen til fysioterapiklinikken Klinik Kerne">Se demo →</a>
+    </article>
+   </div>
+   <p class="ex-note">Virksomhederne er fiktive, men designet er ægte. Din side bygges fra bunden med dine billeder, priser og stil. Læs mere om <a href="../hjemmeside-til-frisoer/">hjemmeside til frisør</a> og <a href="../hjemmeside-til-virksomhed/">hjemmeside til din virksomhed</a>.</p>
+  </div>
+ </section>
+
+ <section id="proces" class="sec w grid" aria-labelledby="proces-title">
+  <p class="label"><span>02</span><b>Sådan foregår det</b></p>
+  <div class="body">
+   <h2 id="proces-title">Fra den første snak til en side, der er online, går der typisk få dage.</h2>
+   <ol class="steps">
+    <li><span class="n">01</span><h3>Snak</h3><p>Vi finder ud af, hvad du har brug for.</p></li>
+    <li><span class="n">02</span><h3>Byg</h3><p>Jeg bygger, og du følger med undervejs.</p></li>
+    <li><span class="n">03</span><h3>Live</h3><p>Vi tester sammen, og siden går i luften.</p></li>
+   </ol>
+  </div>
+ </section>
+
+ <section id="priser" class="sec w grid" aria-labelledby="priser-title">
+  <p class="label"><span>03</span><b>Priser</b></p>
+  <div class="body">
+   <h2 id="priser-title">Tre pakker og en fast månedlig aftale, hvis jeg skal passe siden for dig.</h2>
+   <div class="plans">
+    <article class="plan">
+     <div><h3>Basis</h3><p class="for">Til visitkortet</p></div>
+     <div><p class="price">fra 4.500 kr. <small>ekskl. moms</small></p><p class="desc">Til dig der skal online med et professionelt visitkort.</p>
+      <ul><li>Op til 5 sider</li><li>Skræddersyet design</li><li>Kontaktformular</li><li>Kalender integration</li><li>Mobilvenligt</li></ul></div>
+     <a class="act tl" href="#kontakt" data-pakke="Basis">Få et tilbud</a>
+    </article>
+    <article class="plan">
+     <div><h3>Vækst</h3><p class="for">Til væksten</p><span class="rec">Anbefalet til de fleste</span></div>
+     <div><p class="price">fra 7.500 kr. <small>ekskl. moms</small></p><p class="desc">Til virksomheden der vil konvertere besøgende til kunder.</p>
+      <ul><li class="inc">Alt i Basis</li><li>Op til 10 sider</li><li>Betalingslink</li><li>Blog / nyheder</li><li>SEO-tekster</li><li>Hjælp til din Google-virksomhedsprofil</li><li>Et års vejledning</li></ul></div>
+     <a class="act btn" href="#kontakt" data-pakke="Vækst">Få et tilbud</a>
+    </article>
+    <article class="plan">
+     <div><h3>Custom</h3><p class="for">Til det helt egne</p></div>
+     <div><p class="price">Efter tilbud</p><p class="desc">Til virksomheden der vil have noget helt eget.</p>
+      <ul><li class="inc">Alt i Vækst</li><li>APP</li><li>Ubegrænset antal sider</li><li>Skræddersyede integrationer</li><li>Flersproget hvis nødvendigt</li><li>Dedikeret sparring</li><li>Opstart af sociale medier</li><li>Vejledning efter aftale</li></ul></div>
+     <a class="act tl" href="#kontakt" data-pakke="Custom">Book et uforpligtende møde</a>
+    </article>
+    <article class="plan">
+     <div><h3>Drift</h3><p class="for">Tilvalg</p></div>
+     <div><p class="price">249 kr./md. <small>ekskl. moms</small></p><p class="desc">Jeg holder siden ved lige, så du kan passe din forretning. Du får domæne, hosting, rettelser og opdateringer.</p></div>
+     <a class="act tl" href="#kontakt" data-pakke="Drift">Få et tilbud</a>
+    </article>
+   </div>
+   <p class="pk-note">Alle priser er fra-priser ekskl. moms. Du får et skræddersyet tilbud efter en kort snak.</p>
+  </div>
+ </section>
+
+ <section id="om" class="sec w grid" aria-labelledby="om-title">
+  <p class="label"><span>04</span><b>Om mig</b></p>
+  <div class="body about">
+   <figure><picture><source srcset="../edin.webp" type="image/webp"><img src="../edin.jpg" alt="Edin, stifter af ED. Web Works" width="382" height="434" loading="lazy" decoding="async"></picture></figure>
+   <div class="txt">
+    <h2 id="om-title">Et alternativ til de dyre bureauer og de færdige skabeloner.</h2>
+    <p>Jeg er Edin, cand.merc. i Marketing og projektleder ved siden af ED. Jeg bygger sider, der passer til din forretning, uden lange ventetider. Typisk færdig på få dage, også i weekender og på helligdage, hvis din deadline kræver det.</p>
+    <dl class="facts">
+     <div><dt>Uddannelse</dt><dd>cand.merc. i Marketing</dd></div>
+     <div><dt>Levering</dt><dd>Typisk inden for få dage</dd></div>
+     <div><dt>Fleksibilitet</dt><dd>Også weekender og helligdage</dd></div>
+    </dl>
+   </div>
+  </div>
+ </section>
+
+ <section id="kontakt" class="contact w" aria-labelledby="kontakt-title">
+  <div class="grid">
+   <h2 id="kontakt-title">Fortæl mig lidt om din virksomhed.</h2>
+   <div class="side">
+    <p>Skriv kort om dit projekt, så vender jeg tilbage hurtigst muligt. Den første snak er gratis og uforpligtende.</p>
+    <ul><li>Du taler direkte med mig, der bygger siden</li><li>Typisk færdig inden for få dage</li></ul>
+   </div>
+   <form id="kontaktform" action="#" method="POST" novalidate>
+    <input type="hidden" name="_subject" value="Ny henvendelse fra edwebworks.com">
+    <div class="hp" aria-hidden="true"><label for="form-hp">Udfyld ikke dette felt</label><input id="form-hp" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+    <div class="row2">
+     <div><label for="form-navn">Navn</label><input id="form-navn" name="navn" type="text" placeholder="Dit navn" autocomplete="name" required></div>
+     <div><label for="form-email">E-mail</label><input id="form-email" name="email" type="email" placeholder="din@email.dk" autocomplete="email" required></div>
+    </div>
+    <div><label for="form-pakke">Hvilken pakke er du interesseret i?</label>
+     <select id="form-pakke" name="pakke"><option>Basis</option><option>Vækst</option><option>Custom</option><option>Drift</option><option selected>Ved ikke endnu</option></select></div>
+    <div><label for="form-besked">Besked</label><textarea id="form-besked" name="besked" placeholder="Fortæl kort om dit projekt..." required></textarea></div>
+    <div class="send"><button class="btn inv" type="submit">Send besked</button><p class="small">Uforpligtende. Du binder dig ikke til noget.</p></div>
+    <p class="form-status" role="status" aria-live="polite"></p>
+   </form>
+  </div>
+  <footer class="foot"><span>© 2026 ED. Web Works</span><nav aria-label="Flere sider"><a href="#">Til toppen ↑</a><span>DA / <a href="../en/" hreflang="en" lang="en">EN</a></span></nav></footer>
+ </section>
+</main>
+<script>
+(function(){var f=document.getElementById('kontaktform');if(!f)return;var st=f.querySelector('.form-status'),btn=f.querySelector('button[type=submit]');
+f.addEventListener('submit',function(e){e.preventDefault();if(f._honey&&f._honey.value)return;if(!f.checkValidity()){f.reportValidity();return}st.className='form-status';st.textContent='Sender...';btn.disabled=true;
+Promise.resolve({ok:true,json:function(){return Promise.resolve({success:true})}})
+.then(function(r){return r.json()})
+.then(function(){f.innerHTML='<div class="form-done"><h3>Tak, jeg vender tilbage hurtigst muligt.</h3><p>Din besked er sendt. Du taler direkte med mig, der bygger siden.</p></div>'})})})();
+document.querySelectorAll('[data-pakke]').forEach(function(a){a.addEventListener('click',function(){document.getElementById('form-pakke').value=a.dataset.pakke})});
+</script>
+</body>
+</html>
