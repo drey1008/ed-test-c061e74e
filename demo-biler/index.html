@@ -92,6 +92,40 @@ footer{grid-column:1/-1;display:flex;justify-content:space-between;gap:16px;flex
  .ws-img,.ws,.ws-txt,.about-txt,.contact h2,.contact .info,form{grid-column:1/-1}
  .ws{margin-top:32px}
 }
+
+/* Scroll: bilen bygges */
+.build{position:relative;height:520vh;margin-top:clamp(72px,12vh,140px);border-top:1px solid var(--line)}
+.build-in{position:sticky;top:0;height:100vh;height:100svh;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:32px;align-items:center;overflow:hidden}
+.build-txt{position:relative;align-self:center}
+.build-txt .cap{margin-bottom:22px}
+.steps{position:relative;min-height:12.5em}
+.step{position:absolute;inset:0 0 auto 0;opacity:0;transform:translateY(14px);transition:opacity .35s ease,transform .35s ease}
+.step.on{opacity:1;transform:none}
+.step h2{font:400 clamp(40px,5.2vw,84px)/1 var(--disp);text-transform:uppercase}
+.step p{color:var(--g);margin-top:16px;max-width:34ch}
+.count{display:flex;align-items:center;gap:14px;font:500 12px/1 var(--sans);letter-spacing:.12em;color:var(--g)}
+.count b{color:var(--hi);font-weight:500}
+.bar{flex:1;max-width:200px;height:2px;background:var(--line);position:relative;overflow:hidden}
+.bar i{position:absolute;inset:0;background:var(--hi);transform-origin:0 50%;transform:scaleX(var(--p,1))}
+.build svg{display:block;width:100%;height:auto;overflow:visible}
+.build .ln{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.build .hi{stroke:var(--hi)}
+.build .fb{fill:var(--bg)}
+.build .gl{fill:var(--hi);fill-opacity:.1}
+.build .lt{fill:var(--hi)}
+.build .gr{stroke:var(--line);stroke-width:2}
+@media (max-width:860px){
+ .build{height:460vh}
+ .build-in{grid-template-columns:minmax(0,1fr);align-content:center;gap:28px}
+ .steps{min-height:9.5em}
+ .step h2{font-size:clamp(38px,11vw,56px)}
+ .build-txt .cap{margin-bottom:14px}
+}
+@media (prefers-reduced-motion:reduce){
+ .build{height:auto}
+ .build-in{position:relative;height:auto;padding-top:clamp(64px,10vh,120px)}
+ .step{transition:none}
+}
 </style>
 </head>
 <body>
@@ -103,6 +137,26 @@ footer{grid-column:1/-1;display:flex;justify-content:space-between;gap:16px;flex
   <h1 id="h1" class="disp">Klassiske biler, der er klar til at blive kørt</h1>
   <p class="lead">Vi sælger veteranbiler og youngtimere, som vi selv har gennemgået. Og vi passer på den bil, du allerede har.<br><a href="#lager">Se biler til salg</a></p>
   <div class="hero-img"><div class="ph" style="--ar:16/9" role="img" aria-label="Pladsholder til billede"><span>Dit billede her</span></div></div>
+ </section>
+
+
+ <section id="byg" class="build w" aria-label="Sådan bygger vi en bil">
+  <div class="build-in">
+   <div class="build-txt">
+    <p class="cap">Sådan bygger vi en bil</p>
+    <div class="steps"><div class="step" data-step="0"><h2>Først undervognen</h2><p>Rammen bliver rettet op, renset og beskyttet mod rust.</p></div><div class="step" data-step="1"><h2>Så hjulene</h2><p>Nye lejer og bremser, og dæk der passer til bilen.</p></div><div class="step" data-step="2"><h2>Så karrosseriet</h2><p>Pladerne bliver rettet, svejset og lakeret.</p></div><div class="step" data-step="3"><h2>Ruderne sættes i</h2><p>Med nye gummilister, så den holder tæt.</p></div><div class="step" data-step="4"><h2>Krom og kofangere</h2><p>Alt det blanke bliver poleret eller skiftet.</p></div><div class="step on" data-step="5"><h2>Til sidst lygterne</h2><p>Så er den klar til at blive kørt.</p></div></div>
+    <div class="count"><span><b id="bn">06</b> / 06</span><span class="bar"><i id="bb"></i></span></div>
+   </div>
+   <div class="build-art"><svg viewBox="40 90 780 220" role="img" aria-label="Stregtegning af en klassisk bil, der bliver samlet del for del">
+ <path class="ln gr" pathLength="1" d="M50 293H790"/>
+ <g data-part="0"><path class="ln" pathLength="1" d="M105 262H700"/><path class="ln" pathLength="1" d="M120 268H690"/><path class="ln" pathLength="1" d="M200 250V268M600 250V268"/><path class="ln" pathLength="1" d="M560 200H675V240H560Z"/><path class="ln" pathLength="1" d="M300 262V268M450 262V268"/><path class="ln" pathLength="1" d="M240 255L260 262M560 255L540 262"/></g>
+ <g data-part="1" data-dy="70"><g><path class="ln" pathLength="1" d="M158 250a42 42 0 1 0 84 0a42 42 0 1 0 -84 0"/><path class="ln" pathLength="1" d="M170 250a30 30 0 1 0 60 0a30 30 0 1 0 -60 0"/><path class="ln" pathLength="1" d="M200 222V278M172 250H228M180 230L220 270M220 230L180 270"/></g><g><path class="ln" pathLength="1" d="M558 250a42 42 0 1 0 84 0a42 42 0 1 0 -84 0"/><path class="ln" pathLength="1" d="M570 250a30 30 0 1 0 60 0a30 30 0 1 0 -60 0"/><path class="ln" pathLength="1" d="M600 222V278M572 250H628M580 230L620 270M620 230L580 270"/></g></g>
+ <g data-part="2" data-dy="-60"><path class="fb" d="M70 240L70 205C70 190 95 178 150 174L280 168C300 140 320 120 350 116L455 114C480 116 500 140 525 168L690 176C725 180 745 192 748 210L748 236C748 242 744 245 738 245L652 245A52 52 0 0 0 548 245L252 245A52 52 0 0 0 148 245L78 245C73 245 70 243 70 240Z" data-fill/><path class="ln" pathLength="1" d="M70 240L70 205C70 190 95 178 150 174L280 168C300 140 320 120 350 116L455 114C480 116 500 140 525 168L690 176C725 180 745 192 748 210L748 236C748 242 744 245 738 245L652 245A52 52 0 0 0 548 245L252 245A52 52 0 0 0 148 245L78 245C73 245 70 243 70 240Z"/><path class="ln" pathLength="1" d="M95 212L738 216"/><path class="ln" pathLength="1" d="M340 168V243M478 172V243"/><path class="ln" pathLength="1" d="M447 190H467"/><path class="ln" pathLength="1" d="M150 176C150 190 148 200 140 206"/></g>
+ <g data-part="3"><path class="ln gl" pathLength="1" d="M302 164C316 140 330 128 352 124L396 122V164Z"/><path class="ln gl" pathLength="1" d="M410 122L452 121C470 124 484 140 502 164L410 164Z"/></g>
+ <g data-part="4" data-dx="0"><path class="ln hi" pathLength="1" d="M56 226H86V246H58"/><path class="ln hi" pathLength="1" d="M728 228H760V246H730"/><path class="ln hi" pathLength="1" d="M298 168L512 170"/><path class="ln hi" pathLength="1" d="M100 224L732 228"/><path class="ln hi" pathLength="1" d="M187 250a13 13 0 1 0 26 0a13 13 0 1 0 -26 0"/><path class="ln hi" pathLength="1" d="M587 250a13 13 0 1 0 26 0a13 13 0 1 0 -26 0"/></g>
+ <g data-part="5"><path class="ln hi lt" pathLength="1" d="M734 197C734 191 738 188 742 188C746 188 748 192 748 197C748 203 746 206 742 206C738 206 734 203 734 197Z"/><path class="ln hi lt" pathLength="1" d="M68 198H76V214H68Z"/><path class="ln hi" pathLength="1" d="M760 194L810 184M760 200L816 200M760 206L810 216"/></g>
+</svg></div>
+  </div>
  </section>
 
  <section id="lager" class="sec w grid" aria-labelledby="lager-h">
@@ -162,6 +216,44 @@ footer{grid-column:1/-1;display:flex;justify-content:space-between;gap:16px;flex
 </section>
 <script>
 (function(){var f=document.getElementById('f');f.addEventListener('submit',function(e){e.preventDefault();if(!f.checkValidity()){f.reportValidity();return}f.innerHTML='<p class="done">Tak. Dette er en eksempelside, så beskeden er ikke sendt.</p>'})})();
+</script>
+<script>
+(function(){
+ var sec=document.getElementById('byg');if(!sec)return;
+ var rm=window.matchMedia('(prefers-reduced-motion: reduce)');
+ var parts=[].slice.call(sec.querySelectorAll('[data-part]')).map(function(g){
+  return {g:g,i:+g.dataset.part,dy:+(g.dataset.dy||0),paths:[].slice.call(g.querySelectorAll('path[pathLength]')),fill:g.querySelector('[data-fill]')};
+ });
+ var steps=sec.querySelectorAll('.step'),bn=document.getElementById('bn'),bb=document.getElementById('bb');
+ var N=6,cur=-1,ticking=false,last=-1;
+ parts.forEach(function(p){p.paths.forEach(function(el){el.style.strokeDasharray='1 1'})});
+ function cl(x){return x<0?0:x>1?1:x}
+ function ease(x){return 1-Math.pow(1-x,3)}
+ function render(prog){
+  if(Math.abs(prog-last)<0.0005)return;last=prog;
+  var span=0.88/N;
+  parts.forEach(function(p){
+   var t=cl((prog-p.i*span)/span),e=ease(t);
+   p.paths.forEach(function(el){el.style.strokeDashoffset=(1-e).toFixed(4);el.style.opacity=t>0?1:0});
+   if(p.dy){p.g.setAttribute('transform','translate(0 '+(p.dy*(1-e)).toFixed(2)+')')}
+   if(p.fill){p.fill.style.opacity=cl((t-.55)/.45)}
+   if(p.i===5){p.g.querySelectorAll('.lt').forEach(function(l){l.style.fillOpacity=cl((t-.5)/.5)})}
+  });
+  var s=Math.min(N-1,Math.floor(prog/span));
+  if(s!==cur){cur=s;for(var k=0;k<steps.length;k++)steps[k].classList.toggle('on',k===s);bn.textContent='0'+(s+1)}
+  bb.style.setProperty('--p',cl(prog/0.88).toFixed(4));
+ }
+ function measure(){
+  if(rm.matches){render(1);return}
+  var r=sec.getBoundingClientRect(),vh=window.innerHeight,range=r.height-vh;
+  render(range>0?cl(-r.top/range):1);
+ }
+ function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;measure()})}}
+ window.addEventListener('scroll',onScroll,{passive:true});
+ window.addEventListener('resize',onScroll);
+ if(rm.addEventListener)rm.addEventListener('change',function(){last=-1;measure()});
+ measure();
+})();
 </script>
 </body>
 </html>
